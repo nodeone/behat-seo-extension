@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="roboxt.parser.class">Roboxt\Parser</parameter>
+        <parameter key="roboxt.file.class">Roboxt\File</parameter>
+    </parameters>
+
+    <services>
+        <service id="roboxt.parser" class="%roboxt.parser.class%"/>
+
+        <service id="roboxt.file"
+                 class="%roboxt.file.class%"
+                 factory-service="roboxt.parser"
+                 factory-method="parse"
+                >
+            <argument type="string">%behat.paths.base%/data/robots.txt</argument>
+        </service>
+    </services>
+</container>
