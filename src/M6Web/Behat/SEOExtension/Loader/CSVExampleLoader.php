@@ -62,21 +62,32 @@ class CSVExampleLoader implements ExampleLoaderInterface
         }
 
         $values = [];
-        // If we open the file correctly
-        if (false !== ($handle = fopen($file, "r"))) {
-            $firstLine = true;
-            $columns = [];
+        $columns = [];
             // We loop on every line
-            while (false !== ($data = fgetcsv($handle, 0, self::SEPARATOR))) {
-                if ($firstLine) {
-                    $columns = $this->getColumns($data);
-                    $firstLine = false;
+        foreach (file($file) as $line => $data) {
 
-                    continue;
-                }
-
-                $values[] = $this->transformer->transform(array_combine($columns, $data));
+            $data = utf8_encode(trim($data));
+            $matches = [];
+            preg_match('/;("[^"]+")/', $data, $matches);
+            array_shift($matches);
+            foreach ($matches as $key => $match) {
+                $data = str_replace($match, '___'.$key.'___', $data);
             }
+
+            $data = explode(self::SEPARATOR, $data);
+            if ($line == 0) {
+                $columns = $this->getColumns($data);
+
+                continue;
+            }
+            foreach ($data as $key => $value) {
+                $matchesKey = trim($value, '___');
+                if (array_key_exists($matchesKey, $matches)) {
+                    $data[$key] = trim($matches[$matchesKey], '"');
+                }
+            }
+
+            $values[] = $this->transformer->transform(array_combine($columns, $data));
         }
 
         return $values;
