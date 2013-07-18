@@ -1,6 +1,6 @@
 <?php
 
-namespace SEOChecker\Behat\SEOExtension\Exception;
+namespace M6Web\Behat\SEOExtension\Exception;
 
 /**
  * NotIndexablePageException

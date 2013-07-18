@@ -1,6 +1,6 @@
 <?php
 
-namespace SEOChecker\Behat\SEOExtension\DataTransformer;
+namespace M6Web\Behat\SEOExtension\DataTransformer;
 
 /**
  * TransformerInterface

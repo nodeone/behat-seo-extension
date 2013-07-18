@@ -1,6 +1,6 @@
 <?php
 
-namespace SEOChecker\Behat\SEOExtension\Loader;
+namespace M6Web\Behat\SEOExtension\Loader;
 
 use Behat\Gherkin\Node\TableNode;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace SEOChecker\Behat\SEOExtension\Context\Initializer;
+namespace M6Web\Behat\SEOExtension\Context\Initializer;
 
 use Behat\Behat\Context\ContextInterface;
 use Behat\Behat\Context\Initializer\InitializerInterface;
 use Roboxt\File;
-use SEOChecker\Behat\SEOExtension\Context\RobotAwareInterface;
+use M6Web\Behat\SEOExtension\Context\RobotAwareInterface;
 
 /**
  * RobotAwareInitializer

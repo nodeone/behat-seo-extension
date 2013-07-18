@@ -1,0 +1,5 @@
+URL;USERAGENT;ROBOTS;CANONICAL;HANDHELD;ONLYSCREEN640;TITLE;DESCRIPTION
+"http://github.com/m6web";"*";"index,follow";"http://github.com/m6web";"http://github.com/m6web";"http://github.com/m6web";"M6Web";""
+"http://github.com/m6web";"Googlebot-News";"index,follow";"http://github.com/m6web";"http://github.com/m6web";"http://github.com/m6web";"M6Web";""
+"http://github.com/theodo";"*";"noindex, follow";"http://github.com/theodo";"";"";"Theodo";""
+"http://github.com/theodo";"Googlebot-News";"noindex, follow";"http://github.com/theodo";"";"";"Theodo";""

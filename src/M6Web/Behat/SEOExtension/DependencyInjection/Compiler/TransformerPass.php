@@ -1,6 +1,6 @@
 <?php
 
-namespace SEOChecker\Behat\SEOExtension\DependencyInjection\Compiler;
+namespace M6Web\Behat\SEOExtension\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

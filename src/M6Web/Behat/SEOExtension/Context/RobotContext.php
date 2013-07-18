@@ -1,12 +1,12 @@
 <?php
 
-namespace SEOChecker\Behat\SEOExtension\Context;
+namespace M6Web\Behat\SEOExtension\Context;
 
 use Behat\Behat\Context\Step;
 use Behat\MinkExtension\Context\RawMinkContext;
 use Roboxt\File;
-use SEOChecker\Behat\SEOExtension\Context\RobotAwareInterface;
-use SEOChecker\Behat\SEOExtension\Exception\NotIndexablePageException;
+use M6Web\Behat\SEOExtension\Context\RobotAwareInterface;
+use M6Web\Behat\SEOExtension\Exception\NotIndexablePageException;
 
 /**
  * RobotContext

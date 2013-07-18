@@ -1,9 +1,9 @@
 <?php
 
-namespace SEOChecker\Behat\SEOExtension\EventSubscriber;
+namespace M6Web\Behat\SEOExtension\EventSubscriber;
 
 use Behat\Behat\Event\OutlineEvent;
-use SEOChecker\Behat\SEOExtension\Loader\ExampleLoaderInterface;
+use M6Web\Behat\SEOExtension\Loader\ExampleLoaderInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

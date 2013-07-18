@@ -2,10 +2,10 @@
     "name": "m6web/seo-behat-extension",
     "description": "extension behat pour le seo",
     "require": {
-        "behat/mink-extension": "1.1"
+        "behat/mink-extension": "~1.1"
     },
     "require-dev": {
-        "phpspec/phpspec": "2.0"
+        "phpspec/phpspec": "~2.0"
     },
     "license": "MIT",
     "authors": [
@@ -14,5 +14,10 @@
             "email": "benjaming@theodo.fr"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "M6Web\\Behat\\SEOExtension": "src/"
+        }
+    }
 }

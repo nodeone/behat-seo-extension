@@ -1,10 +1,10 @@
 <?php
 
-namespace SEOChecker\Behat\SEOExtension\Loader;
+namespace M6Web\Behat\SEOExtension\Loader;
 
 use Behat\Gherkin\Node\TableNode;
-use SEOChecker\Behat\SEOExtension\DataTransformer\TransformerManager;
-use SEOChecker\Behat\SEOExtension\Exception\FileNotFoundException;
+use M6Web\Behat\SEOExtension\DataTransformer\TransformerManager;
+use M6Web\Behat\SEOExtension\Exception\FileNotFoundException;
 
 class CSVExampleLoader implements ExampleLoaderInterface
 {

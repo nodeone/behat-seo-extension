@@ -1,9 +1,9 @@
 <?php
 
-namespace SEOChecker\Behat\SEOExtension;
+namespace M6Web\Behat\SEOExtension;
 
 use Behat\Behat\Extension\ExtensionInterface;
-use SEOChecker\Behat\SEOExtension\DependencyInjection\Compiler\TransformerPass;
+use M6Web\Behat\SEOExtension\DependencyInjection\Compiler\TransformerPass;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

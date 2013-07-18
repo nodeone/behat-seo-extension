@@ -1,6 +1,6 @@
 <?php
 
-namespace SEOChecker\Behat\SEOExtension\Context;
+namespace M6Web\Behat\SEOExtension\Context;
 
 use Roboxt\File;
 

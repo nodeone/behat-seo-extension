@@ -4,14 +4,14 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="seo_checker.seo_extension.context.initializer.robot.class">SEOChecker\Behat\SEOExtension\Context\Initializer\RobotAwareInitializer</parameter>
+        <parameter key="seo_checker.seo_extension.context.initializer.robot.class">M6Web\Behat\SEOExtension\Context\Initializer\RobotAwareInitializer</parameter>
 
-        <parameter key="seo_checker_seo_extension.loader.csv_example.class">SEOChecker\Behat\SEOExtension\Loader\CSVExampleLoader</parameter>
+        <parameter key="seo_checker_seo_extension.loader.csv_example.class">M6Web\Behat\SEOExtension\Loader\CSVExampleLoader</parameter>
 
-        <parameter key="seo_checker.seo_extension.event_subscriber.outline.class">SEOChecker\Behat\SEOExtension\EventSubscriber\OutlineSubscriber</parameter>
+        <parameter key="seo_checker.seo_extension.event_subscriber.outline.class">M6Web\Behat\SEOExtension\EventSubscriber\OutlineSubscriber</parameter>
 
-        <parameter key="seo_checker.seo_extension.data_transformer.manager.class">SEOChecker\Behat\SEOExtension\DataTransformer\TransformerManager</parameter>
-        <parameter key="seo_checker.seo_extension.data_transformer.indexation.class">SEOChecker\Behat\SEOExtension\DataTransformer\IndexationTransformer</parameter>
+        <parameter key="seo_checker.seo_extension.data_transformer.manager.class">M6Web\Behat\SEOExtension\DataTransformer\TransformerManager</parameter>
+        <parameter key="seo_checker.seo_extension.data_transformer.indexation.class">M6Web\Behat\SEOExtension\DataTransformer\IndexationTransformer</parameter>
     </parameters>
 
     <services>
