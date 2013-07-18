@@ -1,5 +1,5 @@
 {
-    "name": "m6web/seo-behat-extension-component",
+    "name": "m6web/seo-behat-extension",
     "description": "extension behat pour le seo",
     "require": {
         "behat/mink-extension": "1.1"
