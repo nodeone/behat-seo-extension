@@ -2,7 +2,8 @@
     "name": "m6web/seo-behat-extension",
     "description": "extension behat pour le seo",
     "require": {
-        "behat/mink-extension": "~1.1"
+        "behat/mink-extension": "~1.1",
+        "m6web/roboxt": "dev-master"
     },
     "require-dev": {
         "phpspec/phpspec": "~2.0"
