@@ -86,9 +86,8 @@ class RobotContext extends RawMinkContext implements RobotAwareInterface
     {
         $session = $this->getMink()->getSession();
         $url = $session->getCurrentUrl();
-        $userAgent = $this->file->getUserAgent($this->userAgent);
 
-        if (!$userAgent->isIndexable($url)) {
+        if (!$this->file->isUrlAllowedByUserAgent($url, $this->userAgent)) {
             throw new NotIndexablePageException(sprintf('The page "%s" should not be indexable according to the robots.txt file.', $url));
         }
     }
@@ -99,9 +98,8 @@ class RobotContext extends RawMinkContext implements RobotAwareInterface
     public function assertUrlIsNotIndexable()
     {
         $url = $this->getMink()->getSession()->getCurrentUrl();
-        $userAgent = $this->file->getUserAgent($this->userAgent);
 
-        if ($userAgent->isIndexable($url)) {
+        if ($this->file->isUrlAllowedByUserAgent($url, $this->userAgent)) {
             throw new NotIndexablePageException(sprintf('The page "%s" should be indexable according to the robots.txt file.', $url));
         }
     }
