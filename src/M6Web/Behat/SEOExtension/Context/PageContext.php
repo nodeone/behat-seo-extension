@@ -3,6 +3,7 @@
 namespace M6Web\Behat\SEOExtension\Context;
 
 use Behat\Gherkin\Node\PyStringNode;
+use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Exception\ExpectationException;
 use Behat\MinkExtension\Context\RawMinkContext;
 use Behat\Behat\Context\Step;
@@ -16,25 +17,33 @@ class PageContext extends RawMinkContext
 {
     /**
      * @Then /^the page should be indexable$/
+     *
+     * If the meta robots does not exist or contains "index", then the page is indexable.
+     * If the meta robots does not exist then the robots.txt file must not disallow the page.
      */
     public function thePageShouldBeIndexable()
     {
-        return array(
-            new Step\Then("the \"content\" attribute of \"meta[name='robots']\" element should contain \"index\""),
-            new Step\Then("the \"content\" attribute of \"meta[name='robots']\" element should not contain \"noindex\""),
-            new Step\Then("robots should be able to index the page")
-        );
+        try {
+            $this->assertElementAttributeContains("meta[name='robots']", "content", "index");
+            $this->assertElementAttributeNotContains("meta[name='robots']", "content", "noindex");
+        } catch (ElementNotFoundException $e) {
+            return new Step\Then("robots should be able to index the page");
+        }
     }
 
     /**
      * @Then /^the page should not be indexable$/
+     *
+     * If the meta robots exists then it must contains "noindex"
+     * If the meta robots does not exists then the robots.txt file must disallow the the page.
      */
     public function thePageShouldNotBeIndexable()
     {
-        return array(
-            new Step\Then("the \"content\" attribute of \"meta[name='robots']\" element should contain \"noindex\""),
-            new Step\Then("robots should not be able to index the page")
-        );
+        try {
+            $this->assertElementAttributeContains("meta[name='robots']", "content", "noindex");
+        } catch (ElementNotFoundException $e) {
+            return new Step\Then("robots should not be able to index the page");
+        }
     }
 
     /**
