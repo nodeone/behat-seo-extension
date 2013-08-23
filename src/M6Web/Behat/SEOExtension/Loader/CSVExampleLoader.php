@@ -68,7 +68,7 @@ class CSVExampleLoader implements ExampleLoaderInterface
 
             $data = str_getcsv (utf8_encode(trim($data)), ";", '"');
 
-			if ($line == 0) {
+		    if ($line == 0) {
                 $columns = $this->getColumns($data);
 
                 continue;
