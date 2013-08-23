@@ -8,7 +8,6 @@ use M6Web\Behat\SEOExtension\Exception\FileNotFoundException;
 
 class CSVExampleLoader implements ExampleLoaderInterface
 {
-    const SEPARATOR = ";";
 
     const URL = "url";
     const USERAGENT = "user-agent";
@@ -66,26 +65,22 @@ class CSVExampleLoader implements ExampleLoaderInterface
             // We loop on every line
         foreach (file($file) as $line => $data) {
 
-            $data = utf8_encode(trim($data));
-            $matches = [];
-            preg_match('/;("[^"]+")/', $data, $matches);
-            array_shift($matches);
-            foreach ($matches as $key => $match) {
-                $data = str_replace($match, '___'.$key.'___', $data);
-            }
+            $data = str_getcsv (utf8_encode(trim($data)), ";", '"');
 
-            $data = explode(self::SEPARATOR, $data);
-            if ($line == 0) {
+		    if ($line == 0) {
                 $columns = $this->getColumns($data);
 
                 continue;
             }
-            foreach ($data as $key => $value) {
-                $matchesKey = trim($value, '___');
-                if (array_key_exists($matchesKey, $matches)) {
-                    $data[$key] = trim($matches[$matchesKey], '"');
-                }
-            }
+
+            // We fill a new array with empty fields with the same number of elements we have in columns array
+            $dataTemp = array_fill(0, count($columns), null);
+
+            //lets add the two arrays
+            $data = $data+$dataTemp;
+
+            // and remove the potential empty extra fields
+            $data = array_slice($data, 0, count($columns));
 
             $values[] = $this->transformer->transform(array_combine($columns, $data));
         }
