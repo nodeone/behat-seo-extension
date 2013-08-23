@@ -8,7 +8,6 @@ use M6Web\Behat\SEOExtension\Exception\FileNotFoundException;
 
 class CSVExampleLoader implements ExampleLoaderInterface
 {
-    const SEPARATOR = '";"';
 
     const URL = "url";
     const USERAGENT = "user-agent";
