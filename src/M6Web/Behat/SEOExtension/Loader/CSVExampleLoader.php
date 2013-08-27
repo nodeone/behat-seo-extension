@@ -84,7 +84,7 @@ class CSVExampleLoader implements ExampleLoaderInterface
 
             $values[] = $this->transformer->transform(array_combine($columns, $data));
         }
-            //print_r($values);die;
+
         return $values;
     }
 
