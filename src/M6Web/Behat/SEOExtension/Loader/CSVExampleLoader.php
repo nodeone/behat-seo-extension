@@ -65,7 +65,7 @@ class CSVExampleLoader implements ExampleLoaderInterface
             // We loop on every line
         foreach (file($file) as $line => $data) {
 
-            $data = str_getcsv (html_entity_decode(utf8_encode(trim($data))), ";", '"');
+            $data = str_getcsv (utf8_encode(trim($data)), ";", '"');
 
 		    if ($line == 0) {
                 $columns = $this->getColumns($data);
