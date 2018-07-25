@@ -3,8 +3,7 @@
     "description": "behat extension for seo",
     "require": {
         "behat/mink-extension": "2.2",
-        "nodeone/behat-common-contexts": "~2.0",
-        "m6web/roboxt": "dev-master"
+        "nodeone/behat-common-contexts": "~2.0"
     },
     "require-dev": {
         "phpspec/phpspec": "~2.0"
