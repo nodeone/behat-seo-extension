@@ -1,9 +1,9 @@
 {
-    "name": "m6web/seo-behat-extension",
-    "description": "extension behat pour le seo",
+    "name": "nodeone/seo-behat-extension",
+    "description": "behat extension for seo",
     "require": {
-        "behat/mink-extension": "~1.1",
-        "behat/common-contexts": "~1.2",
+        "behat/mink-extension": "2.2",
+        "nodeone/behat-common-contexts": "~2.0",
         "m6web/roboxt": "dev-master"
     },
     "require-dev": {
@@ -19,7 +19,7 @@
             "email": "benjaming@theodo.fr"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-0": {
             "M6Web\\Behat\\SEOExtension": "src/"
